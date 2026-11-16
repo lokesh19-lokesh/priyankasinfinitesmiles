@@ -12,7 +12,7 @@ const CLINIC_CONFIG = {
     subTagline: "Advanced Dental Care & Cosmetic Dentistry Studio in Manikonda, Hyderabad",
     websiteUrl: "https://priyankasinfinitesmiles.com",
     logoUrl: "assets/logo.png",
-    logoWhiteUrl: "assets/logo.png",
+    logoWhiteUrl: "assets/footerlogo.png",
     yearEstablished: "2018",
     rating: "4.9",
     reviewCount: "480+",
