@@ -239,12 +239,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 2. INTERACTIVE BEFORE/AFTER SLIDER LOGIC
   const initSlider = (container) => {
+    if (container.dataset.baGalleryInit) return;
+    container.dataset.baGalleryInit = "true";
+
     const range = container.querySelector(".ba-range-slider");
     const afterWrap = container.querySelector(".ba-after-wrap");
     const handle = container.querySelector(".ba-handle");
     const afterImg = afterWrap ? afterWrap.querySelector("img") : null;
+    const beforeBadge = container.querySelector(".badge-before");
+    const afterBadge = container.querySelector(".badge-after");
 
-    if (!range || !afterWrap || !handle) return;
+    if (!afterWrap || !handle) return;
 
     const syncImgWidth = () => {
       if (afterImg && container.offsetWidth > 0) {
@@ -257,17 +262,72 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", syncImgWidth, { passive: true });
 
     const updateSlider = (value) => {
+      value = Math.max(0, Math.min(100, value));
       afterWrap.style.width = `${value}%`;
       handle.style.left = `${value}%`;
+      if (range) range.value = value;
       syncImgWidth();
     };
 
-    range.addEventListener("input", (e) => {
-      updateSlider(e.target.value);
-    });
+    let animId = null;
+    const animateTo = (targetPercent, duration = 300) => {
+      if (animId) cancelAnimationFrame(animId);
+      const currentVal = parseFloat(range ? range.value : (afterWrap.style.width || "50"));
+      const startTime = performance.now();
+      const startVal = isNaN(currentVal) ? 50 : currentVal;
+      const diff = targetPercent - startVal;
 
-    range.addEventListener("change", (e) => {
-      updateSlider(e.target.value);
+      if (Math.abs(diff) < 0.5) {
+        updateSlider(targetPercent);
+        return;
+      }
+
+      const step = (now) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(1, elapsed / duration);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        updateSlider(startVal + (diff * ease));
+        if (progress < 1) {
+          animId = requestAnimationFrame(step);
+        } else {
+          animId = null;
+        }
+      };
+      animId = requestAnimationFrame(step);
+    };
+
+    if (range) {
+      range.addEventListener("input", (e) => {
+        if (animId) cancelAnimationFrame(animId);
+        updateSlider(parseFloat(e.target.value));
+      });
+      range.addEventListener("change", (e) => {
+        updateSlider(parseFloat(e.target.value));
+      });
+    }
+
+    if (beforeBadge) {
+      beforeBadge.addEventListener("pointerdown", (e) => e.stopPropagation());
+      beforeBadge.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        animateTo(0);
+      });
+    }
+
+    if (afterBadge) {
+      afterBadge.addEventListener("pointerdown", (e) => e.stopPropagation());
+      afterBadge.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        animateTo(100);
+      });
+    }
+
+    handle.addEventListener("dblclick", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      animateTo(50);
     });
   };
 

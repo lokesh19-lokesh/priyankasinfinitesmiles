@@ -185,20 +185,40 @@
 .image-label-badge {
   position: absolute;
   bottom: 12px;
-  padding: 0.25rem 0.65rem;
+  padding: 0.3rem 0.75rem;
   border-radius: var(--radius-sm);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  z-index: 4;
+  z-index: 25;
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.image-label-badge:hover {
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.image-label-badge:active {
+  transform: scale(0.96);
 }
 
 .badge-before {
   left: 12px;
-  background: rgba(23, 45, 50, 0.85);
+  background: rgba(23, 45, 50, 0.88);
   color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.badge-before:hover {
+  background: rgba(30, 60, 66, 0.98);
+  border-color: #FFFFFF;
 }
 
 .badge-after {
@@ -206,6 +226,12 @@
   background: rgba(7, 91, 89, 0.95);
   color: var(--secondary-aqua);
   border: 1px solid var(--secondary-aqua);
+}
+
+.badge-after:hover {
+  background: var(--primary-teal);
+  color: #FFFFFF;
+  border-color: #FFFFFF;
 }
 
 .category-tag-top {
@@ -219,7 +245,8 @@
   border-radius: var(--radius-full);
   font-size: 0.75rem;
   font-weight: 700;
-  z-index: 4;
+  z-index: 25;
+  pointer-events: none;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 

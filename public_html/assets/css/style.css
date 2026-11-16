@@ -1219,6 +1219,19 @@ img {
   color: var(--secondary-aqua);
 }
 
+.footer-designer {
+  color: var(--secondary-aqua) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.footer-designer:hover {
+  color: #FFFFFF !important;
+  text-decoration: underline;
+}
+
 /* FLOATING ACTIONS */
 .floating-actions-container {
   position: fixed;

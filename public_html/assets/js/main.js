@@ -255,6 +255,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const afterWrap = container.querySelector(".ba-after-wrap");
       const handle = container.querySelector(".ba-handle");
       const afterImg = afterWrap ? afterWrap.querySelector("img") : null;
+      const beforeBadge = container.querySelector(".badge-before");
+      const afterBadge = container.querySelector(".badge-after");
 
       if (!afterWrap || !handle) return;
 
@@ -275,13 +277,69 @@ document.addEventListener("DOMContentLoaded", () => {
         if (range) range.value = percent;
       };
 
+      // Smooth transition animation when clicking Before / After badges
+      let animFrameId = null;
+      const animateTo = (targetPercent, duration = 300) => {
+        if (animFrameId) cancelAnimationFrame(animFrameId);
+        const currentPercent = parseFloat(range ? range.value : (afterWrap.style.width || "50"));
+        const startTime = performance.now();
+        const startVal = isNaN(currentPercent) ? 50 : currentPercent;
+        const diff = targetPercent - startVal;
+
+        if (Math.abs(diff) < 0.5) {
+          setPosition(targetPercent);
+          return;
+        }
+
+        const step = (now) => {
+          const elapsed = now - startTime;
+          const progress = Math.min(1, elapsed / duration);
+          // Ease-out cubic
+          const ease = 1 - Math.pow(1 - progress, 3);
+          setPosition(startVal + (diff * ease));
+          if (progress < 1) {
+            animFrameId = requestAnimationFrame(step);
+          } else {
+            animFrameId = null;
+          }
+        };
+        animFrameId = requestAnimationFrame(step);
+      };
+
       if (range) {
         range.addEventListener("input", (e) => {
+          if (animFrameId) cancelAnimationFrame(animFrameId);
           setPosition(parseFloat(e.target.value));
         });
       }
 
-      // Pointer drag & hover interaction
+      // Badge clicks: Before -> 0% (reveal full Before), After -> 100% (reveal full After)
+      if (beforeBadge) {
+        beforeBadge.addEventListener("pointerdown", (e) => e.stopPropagation());
+        beforeBadge.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          animateTo(0);
+        });
+      }
+
+      if (afterBadge) {
+        afterBadge.addEventListener("pointerdown", (e) => e.stopPropagation());
+        afterBadge.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          animateTo(100);
+        });
+      }
+
+      // Double-click handle resets to 50/50 comparison
+      handle.addEventListener("dblclick", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        animateTo(50);
+      });
+
+      // Pointer drag interaction
       let isDragging = false;
       const onMove = (clientX) => {
         const rect = container.getBoundingClientRect();
@@ -292,6 +350,11 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       container.addEventListener("pointerdown", (e) => {
+        // Ignore clicks on badges, buttons, or links
+        if (e.target.closest(".image-label-badge") || e.target.closest("button") || e.target.closest("a")) {
+          return;
+        }
+        if (animFrameId) cancelAnimationFrame(animFrameId);
         isDragging = true;
         onMove(e.clientX);
         try { container.setPointerCapture(e.pointerId); } catch (_) {}

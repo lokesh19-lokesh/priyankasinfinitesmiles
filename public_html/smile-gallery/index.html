@@ -273,16 +273,19 @@
 
         <!-- CASE 01: Smile Designing -->
         <div class="gallery-card" data-category="smile-designing">
-          <div class="gallery-image-box" onclick="openCaseModal('case-01')">
+          <div class="ba-slider-container">
             <span class="category-tag-top">Smile Designing</span>
-            <div class="gallery-split-view">
-              <div class="split-col before">
-                <img src="../assets/images/gallery/smile-design-before.jpg" alt="Pre-op Smile Designing" loading="lazy">
-              </div>
-              <div class="split-col after">
-                <img src="../assets/images/gallery/smile-design-after.jpg" alt="Post-op Smile Designing" loading="lazy">
-              </div>
+            <!-- Underneath image (Before) -->
+            <img src="../assets/images/gallery/smile-design-before.jpg" alt="Pre-op Smile Designing" class="ba-before-img" loading="lazy">
+            <!-- Overlying image clipped (After) -->
+            <div class="ba-after-wrap">
+              <img src="../assets/images/gallery/smile-design-after.jpg" alt="Post-op Smile Designing" class="ba-after-img" loading="lazy">
             </div>
+            <!-- Slider handle -->
+            <div class="ba-handle">
+              <i class="bi bi-arrows"></i>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
             <span class="image-label-badge badge-before">Before</span>
             <span class="image-label-badge badge-after">After</span>
           </div>
@@ -308,16 +311,19 @@
 
         <!-- CASE 02: Dental Implants -->
         <div class="gallery-card" data-category="dental-implants">
-          <div class="gallery-image-box" onclick="openCaseModal('case-02')">
+          <div class="ba-slider-container">
             <span class="category-tag-top">Dental Implants</span>
-            <div class="gallery-split-view">
-              <div class="split-col before">
-                <img src="../assets/images/gallery/implant-before.jpg" alt="Pre-op Damaged Non-Vital Tooth" loading="lazy">
-              </div>
-              <div class="split-col after">
-                <img src="../assets/images/gallery/implant-after.jpg" alt="Post-op Guided Dental Implant" loading="lazy">
-              </div>
+            <!-- Underneath image (Before) -->
+            <img src="../assets/images/gallery/implant-before.jpg" alt="Pre-op Damaged Non-Vital Tooth" class="ba-before-img" loading="lazy">
+            <!-- Overlying image clipped (After) -->
+            <div class="ba-after-wrap">
+              <img src="../assets/images/gallery/implant-after.jpg" alt="Post-op Guided Dental Implant" class="ba-after-img" loading="lazy">
             </div>
+            <!-- Slider handle -->
+            <div class="ba-handle">
+              <i class="bi bi-arrows"></i>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
             <span class="image-label-badge badge-before">Before</span>
             <span class="image-label-badge badge-after">After</span>
           </div>
@@ -343,16 +349,19 @@
 
         <!-- CASE 03: Teeth Whitening -->
         <div class="gallery-card" data-category="teeth-whitening">
-          <div class="gallery-image-box" onclick="openCaseModal('case-03')">
+          <div class="ba-slider-container">
             <span class="category-tag-top">Teeth Whitening</span>
-            <div class="gallery-split-view">
-              <div class="split-col before">
-                <img src="../assets/images/gallery/whitening-before.jpg" alt="Pre-op Stained Teeth" loading="lazy">
-              </div>
-              <div class="split-col after">
-                <img src="../assets/images/gallery/whitening-after.jpg" alt="Post-op Laser Whitened Teeth" loading="lazy">
-              </div>
+            <!-- Underneath image (Before) -->
+            <img src="../assets/images/gallery/whitening-before.jpg" alt="Pre-op Stained Teeth" class="ba-before-img" loading="lazy">
+            <!-- Overlying image clipped (After) -->
+            <div class="ba-after-wrap">
+              <img src="../assets/images/gallery/whitening-after.jpg" alt="Post-op Laser Whitened Teeth" class="ba-after-img" loading="lazy">
             </div>
+            <!-- Slider handle -->
+            <div class="ba-handle">
+              <i class="bi bi-arrows"></i>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
             <span class="image-label-badge badge-before">Before</span>
             <span class="image-label-badge badge-after">After</span>
           </div>
@@ -378,16 +387,19 @@
 
         <!-- CASE 04: Root Canal Treatment -->
         <div class="gallery-card" data-category="root-canal-treatment">
-          <div class="gallery-image-box" onclick="openCaseModal('case-04')">
+          <div class="ba-slider-container">
             <span class="category-tag-top">Root Canal Treatment</span>
-            <div class="gallery-split-view">
-              <div class="split-col before">
-                <img src="../assets/images/gallery/rct-before.jpg" alt="Pre-op Decayed Molar" loading="lazy">
-              </div>
-              <div class="split-col after">
-                <img src="../assets/images/gallery/rct-after.jpg" alt="Post-op Restored Crown" loading="lazy">
-              </div>
+            <!-- Underneath image (Before) -->
+            <img src="../assets/images/gallery/rct-before.jpg" alt="Pre-op Decayed Molar" class="ba-before-img" loading="lazy">
+            <!-- Overlying image clipped (After) -->
+            <div class="ba-after-wrap">
+              <img src="../assets/images/gallery/rct-after.jpg" alt="Post-op Restored Crown" class="ba-after-img" loading="lazy">
             </div>
+            <!-- Slider handle -->
+            <div class="ba-handle">
+              <i class="bi bi-arrows"></i>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
             <span class="image-label-badge badge-before">Before</span>
             <span class="image-label-badge badge-after">After</span>
           </div>
@@ -413,16 +425,19 @@
 
         <!-- CASE 05: Braces & Aligners -->
         <div class="gallery-card" data-category="braces-aligners">
-          <div class="gallery-image-box" onclick="openCaseModal('case-05')">
+          <div class="ba-slider-container">
             <span class="category-tag-top">Braces & Aligners</span>
-            <div class="gallery-split-view">
-              <div class="split-col before">
-                <img src="../assets/images/gallery/aligners-before.jpg" alt="Pre-op Crowded Teeth" loading="lazy">
-              </div>
-              <div class="split-col after">
-                <img src="../assets/images/gallery/aligners-after.jpg" alt="Post-op Straightened Teeth" loading="lazy">
-              </div>
+            <!-- Underneath image (Before) -->
+            <img src="../assets/images/gallery/aligners-before.jpg" alt="Pre-op Crowded Teeth" class="ba-before-img" loading="lazy">
+            <!-- Overlying image clipped (After) -->
+            <div class="ba-after-wrap">
+              <img src="../assets/images/gallery/aligners-after.jpg" alt="Post-op Straightened Teeth" class="ba-after-img" loading="lazy">
             </div>
+            <!-- Slider handle -->
+            <div class="ba-handle">
+              <i class="bi bi-arrows"></i>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
             <span class="image-label-badge badge-before">Before</span>
             <span class="image-label-badge badge-after">After</span>
           </div>
@@ -448,16 +463,19 @@
 
         <!-- CASE 06: Dental Crowns -->
         <div class="gallery-card" data-category="dental-crowns">
-          <div class="gallery-image-box" onclick="openCaseModal('case-06')">
+          <div class="ba-slider-container">
             <span class="category-tag-top">Dental Crowns</span>
-            <div class="gallery-split-view">
-              <div class="split-col before">
-                <img src="../assets/images/gallery/crowns-before.jpg" alt="Pre-op Worn Teeth" loading="lazy">
-              </div>
-              <div class="split-col after">
-                <img src="../assets/images/gallery/crowns-after.jpg" alt="Post-op Full Zirconia Crowns" loading="lazy">
-              </div>
+            <!-- Underneath image (Before) -->
+            <img src="../assets/images/gallery/crowns-before.jpg" alt="Pre-op Worn Teeth" class="ba-before-img" loading="lazy">
+            <!-- Overlying image clipped (After) -->
+            <div class="ba-after-wrap">
+              <img src="../assets/images/gallery/crowns-after.jpg" alt="Post-op Full Zirconia Crowns" class="ba-after-img" loading="lazy">
             </div>
+            <!-- Slider handle -->
+            <div class="ba-handle">
+              <i class="bi bi-arrows"></i>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
             <span class="image-label-badge badge-before">Before</span>
             <span class="image-label-badge badge-after">After</span>
           </div>
@@ -483,16 +501,19 @@
 
         <!-- CASE 07: Veneers -->
         <div class="gallery-card" data-category="veneers">
-          <div class="gallery-image-box" onclick="openCaseModal('case-07')">
+          <div class="ba-slider-container">
             <span class="category-tag-top">Veneers</span>
-            <div class="gallery-split-view">
-              <div class="split-col before">
-                <img src="../assets/images/gallery/veneers-before.jpg" alt="Pre-op Midline Gap" loading="lazy">
-              </div>
-              <div class="split-col after">
-                <img src="../assets/images/gallery/veneers-after.jpg" alt="Post-op Closed Gap with Veneers" loading="lazy">
-              </div>
+            <!-- Underneath image (Before) -->
+            <img src="../assets/images/gallery/veneers-before.jpg" alt="Pre-op Midline Gap" class="ba-before-img" loading="lazy">
+            <!-- Overlying image clipped (After) -->
+            <div class="ba-after-wrap">
+              <img src="../assets/images/gallery/veneers-after.jpg" alt="Post-op Closed Gap with Veneers" class="ba-after-img" loading="lazy">
             </div>
+            <!-- Slider handle -->
+            <div class="ba-handle">
+              <i class="bi bi-arrows"></i>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
             <span class="image-label-badge badge-before">Before</span>
             <span class="image-label-badge badge-after">After</span>
           </div>
@@ -518,16 +539,19 @@
 
         <!-- CASE 08: Cosmetic Dentistry -->
         <div class="gallery-card" data-category="cosmetic-dentistry">
-          <div class="gallery-image-box" onclick="openCaseModal('case-08')">
+          <div class="ba-slider-container">
             <span class="category-tag-top">Cosmetic Dentistry</span>
-            <div class="gallery-split-view">
-              <div class="split-col before">
-                <img src="../assets/images/gallery/composite-before.jpg" alt="Pre-op Chipped Edge" loading="lazy">
-              </div>
-              <div class="split-col after">
-                <img src="../assets/images/gallery/composite-after.jpg" alt="Post-op Composite Edge Bonding" loading="lazy">
-              </div>
+            <!-- Underneath image (Before) -->
+            <img src="../assets/images/gallery/composite-before.jpg" alt="Pre-op Chipped Edge" class="ba-before-img" loading="lazy">
+            <!-- Overlying image clipped (After) -->
+            <div class="ba-after-wrap">
+              <img src="../assets/images/gallery/composite-after.jpg" alt="Post-op Composite Edge Bonding" class="ba-after-img" loading="lazy">
             </div>
+            <!-- Slider handle -->
+            <div class="ba-handle">
+              <i class="bi bi-arrows"></i>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
             <span class="image-label-badge badge-before">Before</span>
             <span class="image-label-badge badge-after">After</span>
           </div>
@@ -553,16 +577,19 @@
 
         <!-- CASE 09: Laser Dentistry -->
         <div class="gallery-card" data-category="laser-dentistry">
-          <div class="gallery-image-box" onclick="openCaseModal('case-09')">
+          <div class="ba-slider-container">
             <span class="category-tag-top">Laser Dentistry</span>
-            <div class="gallery-split-view">
-              <div class="split-col before">
-                <img src="../assets/images/gallery/laser-before.jpg" alt="Pre-op Gummy Smile" loading="lazy">
-              </div>
-              <div class="split-col after">
-                <img src="../assets/images/gallery/laser-after.jpg" alt="Post-op Laser Gum Sculpting" loading="lazy">
-              </div>
+            <!-- Underneath image (Before) -->
+            <img src="../assets/images/gallery/laser-before.jpg" alt="Pre-op Gummy Smile" class="ba-before-img" loading="lazy">
+            <!-- Overlying image clipped (After) -->
+            <div class="ba-after-wrap">
+              <img src="../assets/images/gallery/laser-after.jpg" alt="Post-op Laser Gum Sculpting" class="ba-after-img" loading="lazy">
             </div>
+            <!-- Slider handle -->
+            <div class="ba-handle">
+              <i class="bi bi-arrows"></i>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
             <span class="image-label-badge badge-before">Before</span>
             <span class="image-label-badge badge-after">After</span>
           </div>
@@ -588,16 +615,19 @@
 
         <!-- CASE 10: Bridges -->
         <div class="gallery-card" data-category="bridges">
-          <div class="gallery-image-box" onclick="openCaseModal('case-10')">
+          <div class="ba-slider-container">
             <span class="category-tag-top">Bridges</span>
-            <div class="gallery-split-view">
-              <div class="split-col before">
-                <img src="../assets/images/gallery/bridge-before.jpg" alt="Pre-op Missing Premolar Space" loading="lazy">
-              </div>
-              <div class="split-col after">
-                <img src="../assets/images/gallery/bridge-after.jpg" alt="Post-op Fixed Zirconia Bridge" loading="lazy">
-              </div>
+            <!-- Underneath image (Before) -->
+            <img src="../assets/images/gallery/bridge-before.jpg" alt="Pre-op Missing Premolar Space" class="ba-before-img" loading="lazy">
+            <!-- Overlying image clipped (After) -->
+            <div class="ba-after-wrap">
+              <img src="../assets/images/gallery/bridge-after.jpg" alt="Post-op Fixed Zirconia Bridge" class="ba-after-img" loading="lazy">
             </div>
+            <!-- Slider handle -->
+            <div class="ba-handle">
+              <i class="bi bi-arrows"></i>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
             <span class="image-label-badge badge-before">Before</span>
             <span class="image-label-badge badge-after">After</span>
           </div>
@@ -806,7 +836,7 @@
       <div class="footer-bottom">
         <div class="row align-items-center">
           <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-            <p class="mb-0">© 2026 Priyanka's Infinite Smiles. All Rights Reserved.</p>
+            <p class="mb-0">© 2026 Priyanka's Infinite Smiles. All Rights Reserved. | Designed by <a href="https://thepatternscompany.com/" target="_blank" rel="noopener" class="footer-designer">The Patterns Company</a></p>
           </div>
           <div class="col-md-6 text-center text-md-end">
             <a href="../privacy-policy/" class="me-3">Privacy Policy</a>
