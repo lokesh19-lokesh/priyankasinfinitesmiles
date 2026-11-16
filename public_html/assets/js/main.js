@@ -68,12 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Inject mobile drawer header with close button if not present
   if (navbarCollapse && !navbarCollapse.querySelector(".mobile-drawer-header")) {
+    const brandImg = document.querySelector(".navbar-brand img");
+    const logoSrc = brandImg ? brandImg.getAttribute("src") : "assets/logo.png";
     const drawerHeader = document.createElement("div");
     drawerHeader.className = "mobile-drawer-header";
     drawerHeader.innerHTML = `
-      <div class="d-flex align-items-center gap-2">
-        <div class="brand-logo-mark" style="width:34px;height:34px;font-size:1.05rem;border-radius:8px;"><i class="bi bi-heart-pulse-fill"></i></div>
-        <span class="fw-bold text-teal" style="font-family:var(--font-heading);font-size:1.05rem;">Infinite Smiles</span>
+      <div class="d-flex align-items-center">
+        <img src="${logoSrc}" alt="Priyanka's Infinite Smiles" style="max-height:38px; max-width:165px; width:auto; height:auto;">
       </div>
       <button type="button" class="btn btn-sm btn-outline-teal btn-close-drawer" aria-label="Close Menu" style="padding:0.2rem 0.5rem;border-radius:50%;font-size:0.95rem;">
         <i class="bi bi-x-lg"></i>

@@ -21,7 +21,9 @@
   }
 
   .navbar-brand img {
-    max-width: 185px !important;
+    max-width: 180px !important;
+    max-height: 44px !important;
+    width: auto !important;
     height: auto !important;
   }
 
@@ -58,7 +60,10 @@
   }
 
   .navbar-brand img {
-    max-width: 220px;
+    max-width: 205px;
+    max-height: 48px;
+    width: auto;
+    height: auto;
   }
 }
 
@@ -430,7 +435,9 @@
    ========================================================================== */
 @media (max-width: 480px) {
   .navbar-brand img {
-    max-width: 170px !important;
+    max-width: 155px !important;
+    max-height: 38px !important;
+    width: auto !important;
     height: auto !important;
   }
 
