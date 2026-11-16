@@ -142,21 +142,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, { passive: true });
 
-  // 3. Active Link Highlighting
-  const currentPath = window.location.pathname.replace(/\/$/, "");
-  document.querySelectorAll(".navbar-nav .nav-link, .dropdown-item").forEach(link => {
-    const href = link.getAttribute("href");
-    if (!href) return;
-    const cleanHref = href.replace(/\/$/, "").replace(/^\.\./, "").replace(/^\./, "");
-    if (cleanHref && (currentPath === cleanHref || (cleanHref !== "" && currentPath.endsWith(cleanHref)))) {
-      link.classList.add("active");
-      const parentDropdown = link.closest(".dropdown");
-      if (parentDropdown) {
-        const toggle = parentDropdown.querySelector(".dropdown-toggle");
-        if (toggle) toggle.classList.add("active");
-      }
+  // 3. Active Link Highlighting Safeguard
+  // Each HTML page already specifies its active navigation link in static markup.
+  // Ensure "Home" is never highlighted when visiting subpages.
+  const isHomePage = (() => {
+    const p = window.location.pathname.toLowerCase().replace(/\/$/, "");
+    if (
+      p.includes("/about-us") ||
+      p.includes("/our-doctors") ||
+      p.includes("/smile-gallery") ||
+      p.includes("/testimonials") ||
+      p.includes("/clinic-gallery") ||
+      p.includes("/blog") ||
+      p.includes("/contact-us") ||
+      p.includes("/dental-") ||
+      p.includes("/smile-designing") ||
+      p.includes("/cosmetic-dentistry") ||
+      p.includes("/teeth-whitening") ||
+      p.includes("/root-canal-treatment") ||
+      p.includes("/braces-aligners") ||
+      p.includes("/pediatric-dentistry") ||
+      p.includes("/book-appointment") ||
+      p.includes("/privacy-policy") ||
+      p.includes("/terms-and-conditions") ||
+      p.includes("/404")
+    ) {
+      return false;
     }
-  });
+    return p === "" || p.endsWith("/public_html") || p.endsWith("/public_html/index.html") || p === "/index.html" || p === "/";
+  })();
+
+  if (!isHomePage) {
+    document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+      const text = link.textContent.trim().toLowerCase();
+      if (text === "home") {
+        link.classList.remove("active");
+      }
+    });
+  }
 
   // 4. Initialize Swiper Testimonial Slider if present
   if (typeof Swiper !== "undefined" && document.querySelector(".testimonials-swiper")) {
