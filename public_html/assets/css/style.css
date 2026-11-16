@@ -292,9 +292,9 @@ img {
 
 .navbar-brand img,
 .navbar-logo {
-  max-height: 48px;
+  max-height: 62px;
   width: auto;
-  max-width: 195px;
+  max-width: 250px;
   object-fit: contain;
   transition: transform var(--transition-fast);
 }
@@ -304,30 +304,49 @@ img {
 }
 
 .footer-logo {
-  max-height: 52px;
+  max-height: 64px;
   width: auto;
-  max-width: 200px;
+  max-width: 250px;
   object-fit: contain;
   display: block;
 }
 
-/* NAVBAR TOGGLER / HAMBURGER BUTTON */
+/* NAVBAR TOGGLER / HAMBURGER BUTTON - Mobile/tablet only (<1200px) */
 .navbar-toggler {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  padding: 0 !important;
-  background-color: #FFFFFF !important;
-  border: 1.5px solid var(--primary-teal) !important;
-  border-radius: 10px !important;
-  box-shadow: 0 2px 8px rgba(7, 91, 89, 0.12) !important;
-  color: var(--primary-teal) !important;
-  cursor: pointer;
-  transition: all 0.25s ease-in-out;
-  flex-shrink: 0;
-  outline: none !important;
+  display: none !important;
+}
+
+@media (max-width: 1199.98px) {
+  .navbar-toggler {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0 !important;
+    background-color: #FFFFFF !important;
+    border: 1.5px solid var(--primary-teal) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 8px rgba(7, 91, 89, 0.12) !important;
+    color: var(--primary-teal) !important;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    flex-shrink: 0;
+    outline: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-toggler {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    pointer-events: none !important;
+  }
 }
 
 .navbar-toggler:hover {
@@ -401,14 +420,14 @@ img {
 .drawer-brand-wrap {
   display: flex;
   align-items: center;
-  max-width: 170px;
+  max-width: 210px;
   min-width: 0;
   flex: 1;
 }
 
 .drawer-logo {
-  max-height: 34px !important;
-  max-width: 140px !important;
+  max-height: 48px !important;
+  max-width: 190px !important;
   width: auto !important;
   height: auto !important;
   object-fit: contain !important;
