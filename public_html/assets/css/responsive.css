@@ -237,8 +237,8 @@
     width: 320px !important;
     max-width: 86vw !important;
     height: 100vh !important;
-    background: #FFFFFF !important;
-    box-shadow: 6px 0 40px rgba(0, 0, 0, 0.28) !important;
+    background: #000022 !important;
+    box-shadow: 6px 0 40px rgba(0, 0, 0, 0.5) !important;
     padding: 1.5rem !important;
     overflow-y: auto !important;
     z-index: 1070 !important;
@@ -257,7 +257,7 @@
   .mobile-menu-overlay {
     position: fixed !important;
     inset: 0 !important;
-    background: rgba(4, 56, 54, 0.6) !important;
+    background: rgba(0, 0, 34, 0.75) !important;
     backdrop-filter: blur(4px) !important;
     -webkit-backdrop-filter: blur(4px) !important;
     z-index: 1050 !important;
@@ -277,7 +277,7 @@
     justify-content: space-between !important;
     padding-bottom: 1.25rem !important;
     margin-bottom: 1.25rem !important;
-    border-bottom: 1px solid var(--border-light) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
     width: 100% !important;
     gap: 1rem !important;
   }
@@ -289,33 +289,33 @@
     width: 44px;
     height: 44px;
     padding: 0 !important;
-    background-color: #FFFFFF !important;
-    border: 1.5px solid var(--primary-teal) !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border: 1.5px solid rgba(96, 203, 244, 0.45) !important;
     border-radius: 10px !important;
-    box-shadow: 0 2px 8px rgba(7, 91, 89, 0.12) !important;
-    color: var(--primary-teal) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 34, 0.3) !important;
+    color: #FFFFFF !important;
     cursor: pointer;
     transition: all 0.25s ease-in-out;
   }
 
   .navbar-toggler:hover {
-    background-color: var(--bg-soft) !important;
-    border-color: var(--primary-teal-dark) !important;
+    background-color: rgba(96, 203, 244, 0.15) !important;
+    border-color: var(--secondary-aqua) !important;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(7, 91, 89, 0.18) !important;
+    box-shadow: 0 4px 12px rgba(96, 203, 244, 0.25) !important;
   }
 
   .navbar-toggler.is-active {
-    background-color: var(--primary-teal) !important;
-    border-color: var(--primary-teal) !important;
+    background-color: var(--secondary-aqua) !important;
+    border-color: var(--secondary-aqua) !important;
   }
 
   .navbar-toggler.is-active .navbar-toggler-icon-custom span {
-    background-color: #FFFFFF !important;
+    background-color: #000022 !important;
   }
 
   .navbar-toggler:focus-visible {
-    box-shadow: 0 0 0 3px rgba(121, 207, 197, 0.6) !important;
+    box-shadow: 0 0 0 3px rgba(96, 203, 244, 0.6) !important;
     outline: none !important;
   }
 
@@ -331,16 +331,17 @@
     padding: 0.75rem 0.6rem !important;
     font-size: 1rem;
     font-weight: 500;
-    color: var(--color-heading);
-    border-bottom: 1px solid rgba(229, 238, 238, 0.6);
+    color: rgba(255, 255, 255, 0.9) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     align-items: center;
     justify-content: space-between;
     white-space: normal !important;
   }
 
+  .navbar-nav .nav-link:hover,
   .navbar-nav .nav-link.active {
-    color: var(--primary-teal);
+    color: var(--secondary-aqua) !important;
     font-weight: 600;
   }
 
@@ -352,7 +353,7 @@
     border: none;
     box-shadow: none;
     padding: 0.5rem 0 0.5rem 1rem;
-    background-color: var(--bg-soft);
+    background-color: rgba(255, 255, 255, 0.06);
     border-radius: var(--radius-sm);
     margin-top: 0.25rem;
   }
@@ -360,6 +361,12 @@
   .dropdown-item {
     padding: 0.55rem 0.75rem;
     font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .dropdown-item:hover {
+    color: var(--secondary-aqua);
+    background: transparent;
   }
 
   .site-header .btn-teal {
@@ -368,6 +375,10 @@
     justify-content: center;
     padding: 0.75rem 1rem !important;
     margin-top: 0.5rem;
+    background-color: var(--secondary-aqua) !important;
+    border-color: var(--secondary-aqua) !important;
+    color: #000022 !important;
+    font-weight: 700;
   }
 }
 
