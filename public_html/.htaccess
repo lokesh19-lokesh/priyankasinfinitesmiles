@@ -1,0 +1,125 @@
+# ==============================================================================
+# PRIYANKA'S INFINITE SMILES - PRODUCTION APACHE .HTACCESS
+# Optimized for Apache 2.4+ / cPanel Hosting Environments
+# ==============================================================================
+
+# 1. SECURITY & DIRECTORY INDEX
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+
+# Prevent access to hidden files and sensitive configuration files
+<FilesMatch "^\.|\.(htaccess|htpasswd|ini|log|sh|env|bak|config)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 2. CUSTOM ERROR DOCUMENT
+ErrorDocument 404 /404.html
+
+# 3. MIME TYPES FOR MODERN ASSETS
+<IfModule mod_mime.c>
+    AddType image/svg+xml svg svgz
+    AddType image/webp webp
+    AddType image/avif avif
+    AddType font/woff woff
+    AddType font/woff2 woff2
+    AddType application/manifest+json webmanifest
+</IfModule>
+
+# 4. REWRITE ENGINE & CANONICALIZATION
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # A. Force HTTPS (Strict Canonical SSL)
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # B. Redirect www to non-www
+    RewriteCond %{HTTP_HOST} ^www\.priyankasinfinitesmiles\.com [NC]
+    RewriteRule ^(.*)$ https://priyankasinfinitesmiles.com/$1 [L,R=301]
+
+    # C. Remove trailing index.html from canonical URLs
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*index\.html\ HTTP/
+    RewriteRule ^(([^/]+/)*)index\.html$ https://priyankasinfinitesmiles.com/$1 [R=301,L]
+
+    # D. Trailing Slash Enforcement on existing directories
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^(.*[^/])$ https://%{HTTP_HOST}/$1/ [R=301,L]
+
+    # E. Clean URLs: internally rewrite extensionless URLs to .html if file exists
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^([^\.]+)$ $1.html [L]
+</IfModule>
+
+# 5. SECURITY HEADERS
+<IfModule mod_headers.c>
+    # Prevent clickjacking attacks
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Prevent MIME-type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Enable Cross-Site Scripting filter
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Referrer policy for privacy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy
+    Header set Permissions-Policy "geolocation=(self), camera=(), microphone=()"
+
+    # HTTP Strict Transport Security (HSTS)
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
+# 6. GZIP / DEFLATE COMPRESSION
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# 7. BROWSER CACHING (EXPIRES HEADERS)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # Images & SVG
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # CSS and JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+
+    # Web Fonts
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+
+    # HTML Documents (keep fresh)
+    ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+

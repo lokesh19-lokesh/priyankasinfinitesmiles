@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="420" height="80" fill="none">
+  <defs>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075B59"/>
+      <stop offset="100%" stop-color="#79CFC5"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D7B98E"/>
+      <stop offset="100%" stop-color="#c49b64"/>
+    </linearGradient>
+  </defs>
+  <!-- Embellished Icon Mark (Tooth + Infinity Loop) -->
+  <g transform="translate(10, 8)">
+    <rect width="64" height="64" rx="16" fill="url(#tealGrad)" />
+    <!-- Stylized Tooth and Infinity Smile Curve -->
+    <path d="M 22 28 C 22 20, 27 16, 32 20 C 37 16, 42 20, 42 28 C 42 38, 38 46, 36 49 C 34 52, 33 46, 32 46 C 31 46, 30 52, 28 49 C 26 46, 22 38, 22 28 Z" fill="#FFFFFF" opacity="0.95"/>
+    <!-- Infinity Smile Accent -->
+    <path d="M 18 36 C 24 46, 40 46, 46 36" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="32" cy="27" r="2.5" fill="#79CFC5"/>
+    <path d="M 44 20 L 46 24 L 50 24 L 47 27 L 48 31 L 44 28 L 40 31 L 41 27 L 38 24 L 42 24 Z" fill="#D7B98E" transform="scale(0.5) translate(40, 10)"/>
+  </g>
+  <!-- Brand Text -->
+  <text x="88" y="38" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#075B59" letter-spacing="-0.5">Priyanka's</text>
+  <text x="88" y="58" font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="600" fill="#172D32" letter-spacing="1">INFINITE SMILES</text>
+  <text x="88" y="72" font-family="'DM Sans', sans-serif" font-size="9" font-weight="600" fill="#8c6a37" letter-spacing="2.5" text-transform="uppercase">ADVANCED DENTAL STUDIO • MANIKONDA</text>
+</svg>

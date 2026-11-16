@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgH" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#043836"/>
+      <stop offset="60%" stop-color="#075B59"/>
+      <stop offset="100%" stop-color="#0d7774"/>
+    </linearGradient>
+    <linearGradient id="chairGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E5EEEE"/>
+    </linearGradient>
+    <linearGradient id="screenG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#79CFC5"/>
+      <stop offset="100%" stop-color="#D7B98E"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bgH)"/>
+  <circle cx="700" cy="100" r="280" fill="#79CFC5" opacity="0.08"/>
+  <circle cx="100" cy="500" r="320" fill="#D7B98E" opacity="0.06"/>
+  <!-- Clinic Window / Architecture -->
+  <line x1="120" y1="60" x2="720" y2="60" stroke="#79CFC5" stroke-opacity="0.2" stroke-width="1"/>
+  <line x1="120" y1="200" x2="720" y2="200" stroke="#79CFC5" stroke-opacity="0.1" stroke-width="1"/>
+  <!-- Advanced Dental Chair Silhouette -->
+  <path d="M 260 480 L 520 480 C 530 480, 540 470, 540 460 L 530 400 L 460 380 L 380 370 L 300 390 L 260 440 Z" fill="url(#chairGrad)" opacity="0.95"/>
+  <path d="M 460 380 L 530 260 C 535 250, 545 250, 555 255 L 590 280 C 600 290, 595 305, 585 315 L 530 380 Z" fill="#FFFFFF"/>
+  <rect x="560" y="225" width="60" height="35" rx="8" fill="#D7B98E" opacity="0.8"/>
+  <!-- Base of Chair -->
+  <rect x="370" y="480" width="60" height="70" rx="4" fill="#172D32"/>
+  <ellipse cx="400" cy="550" rx="90" ry="16" fill="#042625"/>
+  <!-- Overhead Dental Operatory Lamp -->
+  <path d="M 450 60 L 460 160 L 360 200" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <rect x="320" y="190" width="80" height="30" rx="10" fill="#FFFFFF"/>
+  <ellipse cx="360" cy="205" rx="28" ry="8" fill="#79CFC5" opacity="0.85"/>
+  <path d="M 330 220 L 290 380 L 430 380 Z" fill="url(#screenG)" opacity="0.12"/>
+  <!-- Digital 3D Intraoral Screen Monitor -->
+  <rect x="140" y="140" width="160" height="110" rx="10" fill="#172D32" stroke="#79CFC5" stroke-width="3"/>
+  <rect x="148" y="148" width="144" height="94" rx="6" fill="#075B59"/>
+  <!-- Waveform / 3D Teeth Scan on Monitor -->
+  <path d="M 160 200 C 180 170, 200 230, 220 180 C 240 210, 260 160, 280 195" stroke="#79CFC5" stroke-width="3" fill="none"/>
+  <circle cx="220" cy="180" r="5" fill="#D7B98E"/>
+  <text x="160" y="170" font-family="'DM Sans', sans-serif" font-size="10" fill="#FFFFFF" font-weight="700">3D SCAN: READY</text>
+  <line x1="220" y1="250" x2="220" y2="350" stroke="#172D32" stroke-width="6"/>
+  <!-- Ambient Technology Glow Accent -->
+  <circle cx="650" cy="120" r="140" fill="#79CFC5" opacity="0.12"/>
+  <circle cx="650" cy="120" r="70" fill="#FFFFFF" opacity="0.08"/>
+</svg>

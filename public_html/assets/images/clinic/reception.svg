@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" width="700" height="500">
+  <defs>
+    <linearGradient id="cG_reception" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#075B59"/>
+      <stop offset="100%" stop-color="#172D32"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="500" fill="url(#cG_reception)"/>
+  <!-- Room Visual Structure -->
+  <line x1="50" y1="80" x2="650" y2="80" stroke="#79CFC5" stroke-opacity="0.2" stroke-width="2"/>
+  <rect x="80" y="120" width="540" height="260" rx="16" fill="#F4FAF9" opacity="0.12"/>
+  <!-- Architectural elements -->
+  <circle cx="350" cy="220" r="90" fill="#79CFC5" opacity="0.2"/>
+  <rect x="240" y="240" width="220" height="120" rx="12" fill="#FFFFFF" opacity="0.9"/>
+  <path d="M 280 200 L 420 200 L 350 140 Z" fill="#D7B98E" opacity="0.8"/>
+  <text x="350" y="300" font-family="'Playfair Display', serif" font-size="18" font-weight="700" fill="#075B59" text-anchor="middle">Luxury Welcome Lounge &amp; Front Desk</text>
+  <text x="350" y="325" font-family="'DM Sans', sans-serif" font-size="12" fill="#647579" text-anchor="middle">Priyanka's Infinite Smiles • Manikonda</text>
+  <!-- Card Banner Bottom -->
+  <rect x="0" y="420" width="700" height="80" fill="rgba(7, 91, 89, 0.95)"/>
+  <text x="30" y="454" font-family="'Playfair Display', serif" font-size="18" fill="#FFFFFF" font-weight="700">Luxury Welcome Lounge &amp; Front Desk</text>
+  <text x="30" y="478" font-family="'DM Sans', sans-serif" font-size="13" fill="#dceeed">Ambient comfort, chilled beverages, digital check-in</text>
+</svg>

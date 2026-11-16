@@ -1,0 +1,431 @@
+/**
+ * PRIYANKA'S INFINITE SMILES - SMILE GALLERY STYLESHEET
+ * Premium Before-and-After Portfolio, Interactive Slider & Case Study Modals
+ * Inspired by luxury aesthetic dentistry portfolios
+ */
+
+/* GALLERY FILTER TABS */
+.gallery-filter-wrapper {
+  margin-bottom: 2.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-filter-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.65rem;
+  justify-content: flex-start;
+  min-width: max-content;
+  padding: 0.25rem;
+}
+
+@media (min-width: 992px) {
+  .gallery-filter-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: unset;
+  }
+}
+
+.filter-btn {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.55rem 1.35rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--border-light);
+  background-color: var(--bg-white);
+  color: var(--color-heading);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.filter-btn:hover {
+  border-color: var(--secondary-aqua);
+  color: var(--primary-teal);
+  background-color: var(--bg-soft);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background-color: var(--primary-teal);
+  color: #FFFFFF;
+  border-color: var(--primary-teal);
+  box-shadow: 0 4px 14px rgba(7, 91, 89, 0.25);
+}
+
+.filter-count {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn.active .filter-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+}
+
+/* GALLERY GRID */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* GALLERY CASE CARD */
+.gallery-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(121, 207, 197, 0.6);
+}
+
+/* CARD IMAGE SPLIT PREVIEW */
+.gallery-image-box {
+  position: relative;
+  overflow: hidden;
+  background-color: #0b1f22;
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-split-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.split-col {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split-col img {
+  width: 200%;
+  max-width: unset;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.split-col.before img {
+  margin-left: 0;
+}
+
+.split-col.after img {
+  margin-left: -100%;
+}
+
+.gallery-card:hover .split-col img {
+  transform: scale(1.05);
+}
+
+.split-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #FFFFFF;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 3;
+}
+
+.split-divider-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary-teal);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* CORNER BADGES */
+.image-label-badge {
+  position: absolute;
+  bottom: 12px;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  z-index: 4;
+}
+
+.badge-before {
+  left: 12px;
+  background: rgba(23, 45, 50, 0.85);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.badge-after {
+  right: 12px;
+  background: rgba(7, 91, 89, 0.95);
+  color: var(--secondary-aqua);
+  border: 1px solid var(--secondary-aqua);
+}
+
+.category-tag-top {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--primary-teal);
+  backdrop-filter: blur(6px);
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  z-index: 4;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* CARD DETAILS */
+.gallery-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.gallery-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-heading);
+}
+
+.gallery-card-desc {
+  font-size: 0.9rem;
+  color: var(--color-body);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.gallery-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+.gallery-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.gallery-card-actions .btn {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+/* INTERACTIVE BEFORE/AFTER SLIDER COMPONENT */
+.ba-slider-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+  background-color: #0b1f22;
+}
+
+.ba-slider-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.ba-before-img {
+  z-index: 1;
+}
+
+.ba-after-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  border-right: 3px solid #FFFFFF;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+
+.ba-after-wrap img {
+  width: 100%;
+  max-width: unset;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-teal);
+  color: #FFFFFF;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: ew-resize;
+  z-index: 10;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.ba-handle:hover,
+.ba-handle:active {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: var(--secondary-aqua);
+  color: var(--primary-teal-dark);
+}
+
+.ba-range-slider {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 20;
+  cursor: ew-resize;
+  margin: 0;
+}
+
+/* CASE STUDY MODAL */
+.case-modal-dialog {
+  max-width: 900px;
+}
+
+.case-modal-content {
+  border-radius: var(--radius-xl);
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.case-modal-header {
+  background: var(--primary-teal);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.case-modal-header .btn-close {
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+.case-modal-body {
+  padding: 2.25rem 2rem;
+  background-color: #FFFFFF;
+}
+
+.treatment-timeline-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: var(--bg-soft);
+  color: var(--primary-teal);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.modal-stages-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.modal-stages-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.65rem;
+  font-size: 0.92rem;
+}
+
+.modal-stages-list li i {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  color: var(--secondary-aqua);
+}
+
+/* ANIMATION ON FILTER */
+.gallery-card.fade-in {
+  animation: cardFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+

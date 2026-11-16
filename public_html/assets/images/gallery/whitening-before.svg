@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450">
+  <defs>
+    <linearGradient id="toothGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4e3c1"/>
+      <stop offset="100%" stop-color="#dcd0ba"/>
+    </linearGradient>
+    <linearGradient id="gumGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d98282"/>
+      <stop offset="100%" stop-color="#b85f67"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="#112224"/>
+  <!-- Mouth Opening Dark Background -->
+  <path d="M 60 220 Q 300 290 540 220 Q 300 370 60 220 Z" fill="#060c0d"/>
+  <!-- Upper Gums Scalloped -->
+  <path d="M 80 180 Q 140 130 200 170 Q 260 120 300 170 Q 340 120 400 170 Q 460 130 520 180 L 520 120 L 80 120 Z" fill="url(#gumGrad)"/>
+  <!-- Upper Central &amp; Lateral Teeth -->
+  <!-- Left Canine -->
+  <path d="M 120 180 Q 130 250 160 255 Q 180 240 175 175 Z" fill="url(#toothGrad)" stroke="#1a2b2c" stroke-width="1.5"/>
+  <!-- Left Lateral -->
+  <path d="M 180 175 Q 190 260 225 260 Q 235 240 230 170 Z" fill="url(#toothGrad)" stroke="#1a2b2c" stroke-width="1.5"/>
+  <!-- Left Central -->
+  <path d="M 235 170 Q 240 280 295 280 Q 295 240 298 170 Z" fill="url(#toothGrad)" stroke="#1a2b2c" stroke-width="1.5"/>
+  <!-- Right Central -->
+  <path d="M 302 170 Q 305 280 365 280 Q 365 240 365 170 Z" fill="url(#toothGrad)" stroke="#1a2b2c" stroke-width="1.5"/>
+  <!-- Right Lateral -->
+  <path d="M 370 170 Q 365 260 415 260 Q 420 240 420 175 Z" fill="url(#toothGrad)" stroke="#1a2b2c" stroke-width="1.5"/>
+  <!-- Right Canine -->
+  <path d="M 425 175 Q 420 240 440 255 Q 470 250 480 180 Z" fill="url(#toothGrad)" stroke="#1a2b2c" stroke-width="1.5"/>
+  
+  <!-- Subtle luster / highlights -->
+  <ellipse cx="270" cy="220" rx="8" ry="25" fill="#ffffff" opacity="0.2"/>
+  <ellipse cx="330" cy="220" rx="8" ry="25" fill="#ffffff" opacity="0.2"/>
+  
+  <!-- Badge -->
+  <g transform="translate(24, 24)">
+    <rect width="180" height="34" rx="8" fill="#dc3545" opacity="0.95"/>
+    <text x="90" y="22" font-family="'DM Sans', sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1">CLINICAL BEFORE</text>
+  </g>
+  <!-- Footer Note -->
+  <rect x="0" y="390" width="600" height="60" fill="rgba(0,0,0,0.6)"/>
+  <text x="30" y="426" font-family="'DM Sans', sans-serif" font-size="14" fill="#79CFC5" font-weight="600">Laser Teeth Whitening</text>
+  <text x="570" y="426" font-family="'DM Sans', sans-serif" font-size="12" fill="#dceeed" text-anchor="end">Pre-op: Lightened by 7 Shades</text>
+</svg>
