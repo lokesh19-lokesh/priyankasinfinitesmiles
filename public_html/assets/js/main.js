@@ -221,5 +221,100 @@ document.addEventListener("DOMContentLoaded", () => {
       offset: 60
     });
   }
+
+  // 6. Local file:// protocol safety: auto-append index.html to directory links
+  if (window.location.protocol === "file:") {
+    document.querySelectorAll("a[href]").forEach((link) => {
+      const href = link.getAttribute("href");
+      if (
+        href &&
+        !href.startsWith("http") &&
+        !href.startsWith("#") &&
+        !href.startsWith("tel:") &&
+        !href.startsWith("mailto:") &&
+        !href.endsWith(".html") &&
+        !href.includes(".webp") &&
+        !href.includes(".jpg") &&
+        !href.includes(".png") &&
+        !href.includes(".svg")
+      ) {
+        if (href.endsWith("/")) {
+          link.setAttribute("href", href + "index.html");
+        }
+      }
+    });
+  }
+
+  // 7. Interactive Before/After Sliders
+  const initBaSliders = () => {
+    document.querySelectorAll(".ba-slider-container").forEach((container) => {
+      if (container.dataset.baInitialized) return;
+      container.dataset.baInitialized = "true";
+
+      const range = container.querySelector(".ba-range-slider");
+      const afterWrap = container.querySelector(".ba-after-wrap");
+      const handle = container.querySelector(".ba-handle");
+      const afterImg = afterWrap ? afterWrap.querySelector("img") : null;
+
+      if (!afterWrap || !handle) return;
+
+      const syncWidth = () => {
+        if (afterImg && container.offsetWidth > 0) {
+          afterImg.style.width = `${container.offsetWidth}px`;
+          afterImg.style.minWidth = `${container.offsetWidth}px`;
+        }
+      };
+
+      syncWidth();
+      window.addEventListener("resize", syncWidth, { passive: true });
+
+      const setPosition = (percent) => {
+        percent = Math.max(0, Math.min(100, percent));
+        afterWrap.style.width = `${percent}%`;
+        handle.style.left = `${percent}%`;
+        if (range) range.value = percent;
+      };
+
+      if (range) {
+        range.addEventListener("input", (e) => {
+          setPosition(parseFloat(e.target.value));
+        });
+      }
+
+      // Pointer drag & hover interaction
+      let isDragging = false;
+      const onMove = (clientX) => {
+        const rect = container.getBoundingClientRect();
+        if (rect.width > 0) {
+          const x = clientX - rect.left;
+          setPosition((x / rect.width) * 100);
+        }
+      };
+
+      container.addEventListener("pointerdown", (e) => {
+        isDragging = true;
+        onMove(e.clientX);
+        try { container.setPointerCapture(e.pointerId); } catch (_) {}
+      });
+
+      container.addEventListener("pointermove", (e) => {
+        if (isDragging) {
+          onMove(e.clientX);
+        }
+      });
+
+      const onStop = (e) => {
+        if (isDragging) {
+          isDragging = false;
+          try { container.releasePointerCapture(e.pointerId); } catch (_) {}
+        }
+      };
+
+      container.addEventListener("pointerup", onStop);
+      container.addEventListener("pointercancel", onStop);
+    });
+  };
+
+  initBaSliders();
 });
 

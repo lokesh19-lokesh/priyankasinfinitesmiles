@@ -22,7 +22,7 @@ const CLINIC_CONFIG = {
   founder: {
     name: "Dr. Priyanka Vijayakumar",
     title: "Chief Cosmetic Dentist & Dental Surgeon",
-    qualifications: "BDS, Fellowship in Cosmetic Dentistry & Oral Implantology",
+    qualifications: "MDS, Fellowship in Cosmetic Dentistry & Oral Implantology",
     experience: "10+ Years of Clinical Excellence",
     awards: ["SumanTV Healthcare Excellence Award", "Member of Indian Dental Association (IDA)"],
     speciality: "Digital Smile Designing, Aesthetic Veneers, Dental Implants & Restorative Dentistry",

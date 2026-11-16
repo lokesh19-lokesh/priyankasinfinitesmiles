@@ -279,6 +279,7 @@
   -webkit-user-select: none;
   touch-action: pan-y;
   background-color: #0b1f22;
+  cursor: ew-resize;
 }
 
 .ba-slider-container img {
@@ -304,13 +305,16 @@
   overflow: hidden;
   z-index: 2;
   border-right: 3px solid #FFFFFF;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+  box-shadow: 2px 0 10px rgba(0,0,0,0.35);
+  pointer-events: none;
 }
 
 .ba-after-wrap img {
-  width: 100%;
-  max-width: unset;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
+  max-width: unset !important;
   object-fit: cover;
 }
 
@@ -319,8 +323,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: var(--primary-teal);
   color: #FFFFFF;
@@ -329,14 +333,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: ew-resize;
   z-index: 10;
+  pointer-events: none;
   transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
-.ba-handle:hover,
-.ba-handle:active {
+.ba-slider-container:hover .ba-handle {
   transform: translate(-50%, -50%) scale(1.12);
   background: var(--secondary-aqua);
   color: var(--primary-teal-dark);
@@ -351,6 +355,7 @@
   z-index: 20;
   cursor: ew-resize;
   margin: 0;
+  padding: 0;
 }
 
 /* CASE STUDY MODAL */

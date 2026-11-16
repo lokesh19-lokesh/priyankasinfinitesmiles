@@ -22,7 +22,7 @@ const GALLERY_CASES = [
       "Custom hand-layered ceramic veneers fabrication",
       "Precision adhesive bonding under dental dam isolation & bite balancing"
     ],
-    doctor: "Dr. Priyanka Vijayakumar (BDS, Fellowship in Cosmetic Dentistry)",
+    doctor: "Dr. Priyanka Vijayakumar (MDS, Fellowship in Cosmetic Dentistry)",
     result: "Natural, luminous smile with harmonious lip line symmetry and preserved enamel integrity."
   },
   {
