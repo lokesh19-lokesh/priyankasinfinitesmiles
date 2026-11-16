@@ -12,8 +12,8 @@ const GALLERY_CASES = [
     categoryLabel: "Smile Designing",
     title: "Complete Digital Smile Makeover with Porcelain Veneers",
     shortDesc: "Corrected worn incisal edges, midline shift, and intrinsic fluorosis staining using 8 ultra-thin ceramic veneers.",
-    beforeImg: "../assets/images/gallery/smile-design-before.svg",
-    afterImg: "../assets/images/gallery/smile-design-after.svg",
+    beforeImg: "../assets/images/gallery/smile-design-before.jpg",
+    afterImg: "../assets/images/gallery/smile-design-after.jpg",
     duration: "2 Visits (10 Days)",
     objective: "Restore aesthetic smile arc, fix tooth discoloration, and correct mild crowding without invasive cutting.",
     stages: [
@@ -31,8 +31,8 @@ const GALLERY_CASES = [
     categoryLabel: "Dental Implants",
     title: "Immediate Single Anterior Dental Implant with Zirconia Crown",
     shortDesc: "Replaced a fractured front tooth with a guided bio-compatible titanium implant and custom ceramic crown.",
-    beforeImg: "../assets/images/gallery/implant-before.svg",
-    afterImg: "../assets/images/gallery/implant-after.svg",
+    beforeImg: "../assets/images/gallery/implant-before.jpg",
+    afterImg: "../assets/images/gallery/implant-after.jpg",
     duration: "Guided Surgery + Final Crown",
     objective: "Restore missing front tooth with full chewing function and pink aesthetic gum symmetry.",
     stages: [
@@ -88,8 +88,8 @@ const GALLERY_CASES = [
     categoryLabel: "Braces & Aligners",
     title: "Clear Invisible Aligners for Severe Crowding & Crossbite",
     shortDesc: "Straightened overlapping upper and lower front teeth over 9 months without metal brackets or wires.",
-    beforeImg: "../assets/images/gallery/aligners-before.svg",
-    afterImg: "../assets/images/gallery/aligners-after.svg",
+    beforeImg: "../assets/images/gallery/aligners-before.jpg",
+    afterImg: "../assets/images/gallery/aligners-after.jpg",
     duration: "9 Months (Bi-weekly Trays)",
     objective: "Correct dental crowding, align dental arches, and optimize patient bite function discreetly.",
     stages: [
