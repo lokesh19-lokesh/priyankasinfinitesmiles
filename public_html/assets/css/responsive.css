@@ -38,17 +38,155 @@
     font-size: 0.82rem !important;
     white-space: nowrap !important;
   }
+}
 
-  .hero-visual-card img {
-    height: 460px;
+@media (min-width: 992px) {
+  .hero-section {
+    min-height: calc(100vh - 110px);
+    display: flex;
+    align-items: center;
+    padding: clamp(0.75rem, 1.8vh, 1.75rem) 0;
+  }
+
+  .hero-section > .container {
+    width: 100%;
+  }
+}
+
+/* Compact above-the-fold fit for 720px - 850px viewport heights (laptops, 1280x800, Nest Hub) */
+@media (max-height: 850px) and (min-width: 992px) {
+  .hero-section {
+    padding: 0.65rem 0 !important;
+    min-height: calc(100vh - 105px) !important;
+  }
+
+  .section-tag-gold {
+    margin-bottom: 0.4rem !important;
+    padding: 0.2rem 0.75rem !important;
+    font-size: 0.74rem !important;
   }
 
   .hero-title {
-    font-size: 2.75rem;
+    font-size: clamp(1.75rem, 2.1vw, 2.2rem) !important;
+    margin-bottom: 0.45rem !important;
+    line-height: 1.14 !important;
   }
 
   .hero-subtitle {
-    font-size: 1.05rem;
+    font-size: 0.88rem !important;
+    margin-bottom: 0.8rem !important;
+    line-height: 1.45 !important;
+    max-width: 490px !important;
+  }
+
+  .hero-actions {
+    margin-bottom: 0.8rem !important;
+    gap: 0.65rem !important;
+  }
+
+  .hero-actions .btn {
+    padding: 0.55rem 1.3rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .hero-trust-bar {
+    padding-top: 0.75rem !important;
+    gap: 1.15rem !important;
+  }
+
+  .trust-item strong {
+    font-size: 0.8rem !important;
+  }
+
+  .trust-item span {
+    font-size: 0.74rem !important;
+  }
+
+  .hero-visual-card {
+    max-width: 440px !important;
+  }
+
+  .hero-visual-card img {
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  .floating-badge {
+    padding: 0.45rem 0.8rem !important;
+  }
+
+  .floating-badge-bottom {
+    bottom: 12px !important;
+    left: 12px !important;
+    max-width: 220px !important;
+  }
+
+  .floating-badge-bottom p {
+    font-size: 0.76rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .floating-badge-top {
+    top: 12px !important;
+    right: 12px !important;
+    font-size: 0.74rem !important;
+  }
+}
+
+/* Extra compact fit for sub-720px viewport heights (short laptops, DevTools open) */
+@media (max-height: 720px) and (min-width: 992px) {
+  .hero-section {
+    padding: 0.4rem 0 !important;
+    min-height: calc(100vh - 100px) !important;
+  }
+
+  .section-tag-gold {
+    margin-bottom: 0.25rem !important;
+    padding: 0.15rem 0.65rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  .hero-title {
+    font-size: 1.85rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.84rem !important;
+    margin-bottom: 0.65rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .hero-actions {
+    margin-bottom: 0.65rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .hero-actions .btn {
+    padding: 0.45rem 1.1rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  .hero-trust-bar {
+    padding-top: 0.6rem !important;
+    gap: 0.85rem !important;
+  }
+
+  .trust-item strong {
+    font-size: 0.76rem !important;
+  }
+
+  .trust-item span {
+    font-size: 0.7rem !important;
+  }
+
+  .hero-visual-card {
+    max-width: 370px !important;
+  }
+
+  .hero-visual-card img {
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
   }
 }
 
@@ -349,19 +487,68 @@
   }
 
   .hero-trust-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    max-width: 320px;
-    margin: 0 auto;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.35rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 1.5rem 0 0 !important;
+    padding-top: 1.15rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+    align-items: stretch !important;
   }
 
   .trust-item {
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+    gap: 0.25rem !important;
+    padding: 0.25rem 0.15rem !important;
+    width: 100% !important;
+  }
+
+  .trust-item:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .trust-item i {
+    color: var(--accent-gold) !important;
+    font-size: 1.25rem !important;
+    margin-bottom: 0.15rem !important;
+  }
+
+  .trust-item strong {
+    font-size: 0.78rem !important;
+    color: #FFFFFF !important;
+    display: block !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+  }
+
+  .trust-item span {
+    font-size: 0.68rem !important;
+    color: #d8eeec !important;
+    display: block !important;
+    line-height: 1.25 !important;
+  }
+
+  .hero-visual-card {
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-visual-card {
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-visual-card img {
-    height: 320px;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
   }
 
   .floating-badge-bottom {
@@ -507,7 +694,24 @@
   }
 
   .hero-visual-card img {
-    height: 290px;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  .hero-trust-bar {
+    gap: 0.15rem !important;
+  }
+
+  .trust-item strong {
+    font-size: 0.72rem !important;
+  }
+
+  .trust-item span {
+    font-size: 0.64rem !important;
+  }
+
+  .trust-item i {
+    font-size: 1.1rem !important;
   }
 
   .gallery-card-body {

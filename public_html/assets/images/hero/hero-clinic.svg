@@ -2,45 +2,74 @@
   <defs>
     <linearGradient id="bgH" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#043836"/>
-      <stop offset="60%" stop-color="#075B59"/>
-      <stop offset="100%" stop-color="#0d7774"/>
+      <stop offset="50%" stop-color="#075B59"/>
+      <stop offset="100%" stop-color="#0b6b68"/>
     </linearGradient>
     <linearGradient id="chairGrad" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="100%" stop-color="#E5EEEE"/>
+      <stop offset="100%" stop-color="#E3ECEB"/>
     </linearGradient>
     <linearGradient id="screenG" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#79CFC5"/>
       <stop offset="100%" stop-color="#D7B98E"/>
     </linearGradient>
+    <linearGradient id="lampBeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#79CFC5" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#79CFC5" stop-opacity="0.02"/>
+    </linearGradient>
   </defs>
+
+  <!-- Ambient Backdrop -->
   <rect width="800" height="600" fill="url(#bgH)"/>
-  <circle cx="700" cy="100" r="280" fill="#79CFC5" opacity="0.08"/>
-  <circle cx="100" cy="500" r="320" fill="#D7B98E" opacity="0.06"/>
-  <!-- Clinic Window / Architecture -->
-  <line x1="120" y1="60" x2="720" y2="60" stroke="#79CFC5" stroke-opacity="0.2" stroke-width="1"/>
-  <line x1="120" y1="200" x2="720" y2="200" stroke="#79CFC5" stroke-opacity="0.1" stroke-width="1"/>
-  <!-- Advanced Dental Chair Silhouette -->
-  <path d="M 260 480 L 520 480 C 530 480, 540 470, 540 460 L 530 400 L 460 380 L 380 370 L 300 390 L 260 440 Z" fill="url(#chairGrad)" opacity="0.95"/>
-  <path d="M 460 380 L 530 260 C 535 250, 545 250, 555 255 L 590 280 C 600 290, 595 305, 585 315 L 530 380 Z" fill="#FFFFFF"/>
-  <rect x="560" y="225" width="60" height="35" rx="8" fill="#D7B98E" opacity="0.8"/>
-  <!-- Base of Chair -->
-  <rect x="370" y="480" width="60" height="70" rx="4" fill="#172D32"/>
-  <ellipse cx="400" cy="550" rx="90" ry="16" fill="#042625"/>
-  <!-- Overhead Dental Operatory Lamp -->
-  <path d="M 450 60 L 460 160 L 360 200" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.8"/>
-  <rect x="320" y="190" width="80" height="30" rx="10" fill="#FFFFFF"/>
-  <ellipse cx="360" cy="205" rx="28" ry="8" fill="#79CFC5" opacity="0.85"/>
-  <path d="M 330 220 L 290 380 L 430 380 Z" fill="url(#screenG)" opacity="0.12"/>
-  <!-- Digital 3D Intraoral Screen Monitor -->
-  <rect x="140" y="140" width="160" height="110" rx="10" fill="#172D32" stroke="#79CFC5" stroke-width="3"/>
-  <rect x="148" y="148" width="144" height="94" rx="6" fill="#075B59"/>
+  
+  <!-- Architectural Perspective & Grid Lines -->
+  <line x1="60" y1="80" x2="740" y2="80" stroke="#79CFC5" stroke-opacity="0.15" stroke-width="1"/>
+  <line x1="60" y1="200" x2="740" y2="200" stroke="#79CFC5" stroke-opacity="0.08" stroke-width="1"/>
+  <line x1="60" y1="520" x2="740" y2="520" stroke="#79CFC5" stroke-opacity="0.12" stroke-width="1"/>
+  
+  <!-- Ambient Soft Bokeh / Glow Circles -->
+  <circle cx="720" cy="90" r="220" fill="#79CFC5" opacity="0.1"/>
+  <circle cx="120" cy="480" r="260" fill="#D7B98E" opacity="0.07"/>
+
+  <!-- Digital 3D Intraoral Screen Monitor (Upper-Left Quadrant) -->
+  <rect x="90" y="110" width="170" height="115" rx="12" fill="#0d3432" stroke="#79CFC5" stroke-width="3"/>
+  <rect x="98" y="118" width="154" height="99" rx="8" fill="#052827"/>
   <!-- Waveform / 3D Teeth Scan on Monitor -->
-  <path d="M 160 200 C 180 170, 200 230, 220 180 C 240 210, 260 160, 280 195" stroke="#79CFC5" stroke-width="3" fill="none"/>
-  <circle cx="220" cy="180" r="5" fill="#D7B98E"/>
-  <text x="160" y="170" font-family="'DM Sans', sans-serif" font-size="10" fill="#FFFFFF" font-weight="700">3D SCAN: READY</text>
-  <line x1="220" y1="250" x2="220" y2="350" stroke="#172D32" stroke-width="6"/>
-  <!-- Ambient Technology Glow Accent -->
-  <circle cx="650" cy="120" r="140" fill="#79CFC5" opacity="0.12"/>
-  <circle cx="650" cy="120" r="70" fill="#FFFFFF" opacity="0.08"/>
+  <path d="M 112 175 C 130 145, 150 205, 170 155 C 190 185, 210 135, 230 170" stroke="#79CFC5" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <circle cx="170" cy="155" r="6" fill="#D7B98E"/>
+  <circle cx="170" cy="155" r="10" stroke="#D7B98E" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <text x="110" y="142" font-family="'DM Sans', sans-serif" font-size="11" fill="#FFFFFF" font-weight="700" letter-spacing="0.5">3D SCAN: READY</text>
+  <text x="110" y="202" font-family="'DM Sans', sans-serif" font-size="9" fill="#79CFC5" font-weight="500">High-Precision Digital CAD</text>
+  <!-- Monitor Stand -->
+  <line x1="175" y1="225" x2="175" y2="340" stroke="#172D32" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="175" cy="340" rx="35" ry="8" fill="#072423"/>
+
+  <!-- Operatory Lamp Beam onto Chair -->
+  <polygon points="480,185 410,420 570,420" fill="url(#lampBeam)"/>
+
+  <!-- Advanced Dental Chair (Center-Right Quadrant) -->
+  <!-- Hydraulic Base & Platform -->
+  <ellipse cx="490" cy="525" rx="110" ry="18" fill="#031d1c"/>
+  <rect x="460" y="450" width="60" height="75" rx="6" fill="#172D32"/>
+  <rect x="470" y="460" width="40" height="55" rx="3" fill="#0d3432"/>
+  
+  <!-- Chair Seat Cushions -->
+  <path d="M 350 450 L 590 450 C 605 450, 615 440, 615 425 L 605 380 L 535 360 L 460 355 L 390 375 L 350 415 Z" fill="url(#chairGrad)" opacity="0.98"/>
+  <!-- Chair Backrest -->
+  <path d="M 535 360 L 610 240 C 618 228, 630 228, 642 235 L 675 258 C 686 268, 682 284, 670 295 L 605 365 Z" fill="#FFFFFF"/>
+  <!-- Headrest -->
+  <rect x="640" y="200" width="68" height="38" rx="10" fill="#D7B98E" opacity="0.9"/>
+  <rect x="646" y="206" width="56" height="26" rx="6" fill="#e2caa5"/>
+  <!-- Armrest Accent -->
+  <rect x="430" y="375" width="110" height="16" rx="8" fill="#79CFC5" opacity="0.85"/>
+
+  <!-- Overhead Dental Operatory Lamp -->
+  <path d="M 550 50 L 560 135 L 485 170" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.85"/>
+  <rect x="450" y="160" width="75" height="26" rx="9" fill="#FFFFFF"/>
+  <ellipse cx="487" cy="173" rx="24" ry="7" fill="#79CFC5" opacity="0.9"/>
+
+  <!-- Subtle Equipment Tray / Instrument Bridge -->
+  <path d="M 360 415 L 320 415 L 320 370" stroke="#79CFC5" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <rect x="285" y="358" width="65" height="14" rx="4" fill="#E5EEEE" opacity="0.9"/>
+  <line x1="292" y1="365" x2="342" y2="365" stroke="#075B59" stroke-width="2" stroke-dasharray="3,3"/>
 </svg>
