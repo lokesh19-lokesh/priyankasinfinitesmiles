@@ -73,10 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const drawerHeader = document.createElement("div");
     drawerHeader.className = "mobile-drawer-header";
     drawerHeader.innerHTML = `
-      <div class="d-flex align-items-center">
-        <img src="${logoSrc}" alt="Priyanka's Infinite Smiles" style="max-height:38px; max-width:165px; width:auto; height:auto;">
+      <div class="drawer-brand-wrap">
+        <img src="${logoSrc}" alt="Priyanka's Infinite Smiles" class="drawer-logo">
       </div>
-      <button type="button" class="btn btn-sm btn-outline-teal btn-close-drawer" aria-label="Close Menu" style="padding:0.2rem 0.5rem;border-radius:50%;font-size:0.95rem;">
+      <button type="button" class="btn-close-drawer" aria-label="Close Menu">
         <i class="bi bi-x-lg"></i>
       </button>
     `;
@@ -95,10 +95,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const isOpen = navbarCollapse.classList.contains("show");
       if (isOpen) {
         navbarCollapse.classList.remove("show");
+        if (navbarToggler) navbarToggler.classList.remove("is-active");
+        if (header) header.classList.remove("menu-is-open");
         if (mobileOverlay) mobileOverlay.classList.remove("show");
         document.body.style.overflow = "";
       } else {
         navbarCollapse.classList.add("show");
+        if (navbarToggler) navbarToggler.classList.add("is-active");
+        if (header) header.classList.add("menu-is-open");
         if (mobileOverlay) mobileOverlay.classList.add("show");
         document.body.style.overflow = "hidden";
       }
@@ -131,6 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 1200 && navbarCollapse && navbarCollapse.classList.contains("show")) {
       navbarCollapse.classList.remove("show");
+      if (navbarToggler) navbarToggler.classList.remove("is-active");
+      if (header) header.classList.remove("menu-is-open");
       if (mobileOverlay) mobileOverlay.classList.remove("show");
       document.body.style.overflow = "";
     }

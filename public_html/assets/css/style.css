@@ -311,6 +311,143 @@ img {
   display: block;
 }
 
+/* NAVBAR TOGGLER / HAMBURGER BUTTON */
+.navbar-toggler {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0 !important;
+  background-color: #FFFFFF !important;
+  border: 1.5px solid var(--primary-teal) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 2px 8px rgba(7, 91, 89, 0.12) !important;
+  color: var(--primary-teal) !important;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  flex-shrink: 0;
+  outline: none !important;
+}
+
+.navbar-toggler:hover {
+  background-color: var(--bg-soft) !important;
+  border-color: var(--primary-teal-dark) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(7, 91, 89, 0.18) !important;
+}
+
+.navbar-toggler:focus-visible {
+  box-shadow: 0 0 0 3px rgba(121, 207, 197, 0.6) !important;
+}
+
+.navbar-toggler-icon-custom {
+  width: 22px;
+  height: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.navbar-toggler-icon-custom span {
+  display: block;
+  width: 100%;
+  height: 2.2px;
+  background-color: var(--primary-teal);
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, background-color 0.25s ease;
+  transform-origin: center;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon-custom span {
+  background-color: var(--primary-teal-dark);
+}
+
+.navbar-toggler.is-active {
+  background-color: var(--primary-teal) !important;
+  border-color: var(--primary-teal) !important;
+}
+
+.navbar-toggler.is-active .navbar-toggler-icon-custom span {
+  background-color: #FFFFFF;
+}
+
+.navbar-toggler.is-active .navbar-toggler-icon-custom span:nth-child(1) {
+  transform: translateY(6.4px) rotate(45deg);
+}
+
+.navbar-toggler.is-active .navbar-toggler-icon-custom span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.navbar-toggler.is-active .navbar-toggler-icon-custom span:nth-child(3) {
+  transform: translateY(-6.4px) rotate(-45deg);
+}
+
+.navbar-toggler i {
+  font-size: 1.65rem;
+  color: var(--primary-teal);
+  line-height: 1;
+  transition: all 0.25s ease;
+}
+
+.navbar-toggler.is-active i {
+  color: #FFFFFF;
+}
+
+/* DRAWER HEADER, LOGO & PROPER CANCEL BUTTON */
+.drawer-brand-wrap {
+  display: flex;
+  align-items: center;
+  max-width: 170px;
+  min-width: 0;
+  flex: 1;
+}
+
+.drawer-logo {
+  max-height: 34px !important;
+  max-width: 140px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.btn-close-drawer {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  flex-shrink: 0 !important;
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(7, 91, 89, 0.25) !important;
+  background-color: var(--bg-soft) !important;
+  color: var(--primary-teal) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.15rem !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease-in-out !important;
+  padding: 0 !important;
+  box-shadow: 0 2px 8px rgba(7, 91, 89, 0.08) !important;
+  margin-left: auto !important;
+}
+
+.btn-close-drawer:hover {
+  background-color: var(--primary-teal) !important;
+  border-color: var(--primary-teal) !important;
+  color: #FFFFFF !important;
+  transform: rotate(90deg) scale(1.05);
+  box-shadow: 0 4px 12px rgba(7, 91, 89, 0.2) !important;
+}
+
+.btn-close-drawer:active {
+  transform: scale(0.95);
+}
+
 .brand-logo-mark {
   width: 44px;
   height: 44px;
