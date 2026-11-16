@@ -403,7 +403,7 @@
           <h2 class="section-title">Featured Smile Design Cases</h2>
         </div>
         <div class="col-md-4 text-md-end">
-          <a href="../smile-gallery/" class="btn btn-outline-teal btn-sm">View Smile Gallery <i
+          <a href="../smile-gallery/index.html" class="btn btn-outline-teal btn-sm">View Smile Gallery <i
               class="bi bi-arrow-right"></i></a>
         </div>
       </div>
@@ -411,18 +411,25 @@
       <div class="row g-4">
         <div class="col-md-6">
           <div class="gallery-card">
-            <div class="gallery-image-box" onclick="window.location.href='../smile-gallery/'">
+            <div class="ba-slider-container">
               <span class="category-tag-top">Porcelain Veneers</span>
-              <div class="gallery-split-view">
-                <div class="split-col before">
-                  <img src="../assets/images/gallery/smile-design-before.jpg" alt="Pre-op Discolored Worn Enamel"
-                    loading="lazy">
-                </div>
-                <div class="split-col after">
-                  <img src="../assets/images/gallery/smile-design-after.jpg" alt="Post-op 8 Ceramic Veneers"
-                    loading="lazy">
+              <!-- Underneath image (Before) -->
+              <img src="../assets/images/gallery/smile-design-before.jpg" alt="Pre-op Discolored Worn Enamel" class="ba-before-img" loading="lazy">
+
+              <!-- Top image (After) with clip wrapper -->
+              <div class="ba-after-wrap">
+                <img src="../assets/images/gallery/smile-design-after.jpg" alt="Post-op 8 Ceramic Veneers" class="ba-after-img" loading="lazy">
+              </div>
+
+              <!-- Interactive Drag Handle & Range Slider -->
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-button">
+                  <i class="bi bi-chevron-left"></i>
+                  <i class="bi bi-chevron-right"></i>
                 </div>
               </div>
+              <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
               <span class="image-label-badge badge-before">Before</span>
               <span class="image-label-badge badge-after">After</span>
             </div>
@@ -430,24 +437,32 @@
               <h4 class="gallery-card-title">Full Aesthetic Smile Makeover</h4>
               <p class="gallery-card-desc">8 hand-layered lithium disilicate ceramic veneers resolving fluorosis
                 staining and edge wear.</p>
-              <a href="../smile-gallery/" class="btn btn-teal btn-sm align-self-start">View in Smile Gallery</a>
+              <a href="../smile-gallery/index.html" class="btn btn-teal btn-sm align-self-start">View in Smile Gallery</a>
             </div>
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="gallery-card">
-            <div class="gallery-image-box" onclick="window.location.href='../smile-gallery/'">
+            <div class="ba-slider-container">
               <span class="category-tag-top">Midline Diastema</span>
-              <div class="gallery-split-view">
-                <div class="split-col before">
-                  <img src="../assets/images/gallery/veneers-before.jpg" alt="Pre-op Front Gap" loading="lazy">
-                </div>
-                <div class="split-col after">
-                  <img src="../assets/images/gallery/veneers-after.jpg" alt="Post-op Gap Closed with Veneers"
-                    loading="lazy">
+              <!-- Underneath image (Before) -->
+              <img src="../assets/images/gallery/veneers-before.jpg" alt="Pre-op Front Gap" class="ba-before-img" loading="lazy">
+
+              <!-- Top image (After) with clip wrapper -->
+              <div class="ba-after-wrap">
+                <img src="../assets/images/gallery/veneers-after.jpg" alt="Post-op Gap Closed with Veneers" class="ba-after-img" loading="lazy">
+              </div>
+
+              <!-- Interactive Drag Handle & Range Slider -->
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-button">
+                  <i class="bi bi-chevron-left"></i>
+                  <i class="bi bi-chevron-right"></i>
                 </div>
               </div>
+              <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
               <span class="image-label-badge badge-before">Before</span>
               <span class="image-label-badge badge-after">After</span>
             </div>
@@ -455,7 +470,7 @@
               <h4 class="gallery-card-title">Midline Gap Closure with Ultra-Thin Veneers</h4>
               <p class="gallery-card-desc">Closed central spacing seamlessly with minimal preparation ceramic veneers in
                 2 visits.</p>
-              <a href="../smile-gallery/" class="btn btn-teal btn-sm align-self-start">View in Smile Gallery</a>
+              <a href="../smile-gallery/index.html" class="btn btn-teal btn-sm align-self-start">View in Smile Gallery</a>
             </div>
           </div>
         </div>

@@ -228,22 +228,35 @@
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
           <div class="gallery-card">
-            <div class="gallery-image-box" onclick="window.location.href='../smile-gallery/'">
+            <div class="ba-slider-container">
               <span class="category-tag-top">Teeth Whitening</span>
-              <div class="gallery-split-view">
-                <div class="split-col before">
-                  <img src="../assets/images/gallery/whitening-before.jpg" alt="Pre-op Discolored Teeth" loading="lazy">
-                </div>
-                <div class="split-col after">
-                  <img src="../assets/images/gallery/whitening-after.jpg" alt="Post-op Laser Whitened Teeth" loading="lazy">
+              <!-- Underneath image (Before) -->
+              <img src="../assets/images/gallery/whitening-before.jpg" alt="Pre-op Discolored Teeth" class="ba-before-img" loading="lazy">
+
+              <!-- Top image (After) with clip wrapper -->
+              <div class="ba-after-wrap">
+                <img src="../assets/images/gallery/whitening-after.jpg" alt="Post-op Laser Whitened Teeth" class="ba-after-img" loading="lazy">
+              </div>
+
+              <!-- Interactive Drag Handle & Range Slider -->
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-button">
+                  <i class="bi bi-chevron-left"></i>
+                  <i class="bi bi-chevron-right"></i>
                 </div>
               </div>
+              <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
               <span class="image-label-badge badge-before">Before</span>
               <span class="image-label-badge badge-after">After</span>
             </div>
             <div class="gallery-card-body">
               <h4 class="gallery-card-title">Real Patient Whitening Transformation</h4>
               <p class="gallery-card-desc">Lightened intrinsic yellow shade by 7 shades in 45 minutes with zero sensitivity.</p>
+              <div class="gallery-card-meta">
+                <span><i class="bi bi-clock"></i> 45 Mins</span>
+                <span><i class="bi bi-award"></i> Laser Activated</span>
+              </div>
             </div>
           </div>
         </div>
@@ -253,7 +266,7 @@
           <p>
             Whether preparing for a wedding, high-stakes interview, graduation, or simply desiring a rejuvenated appearance, our laser whitening delivers instant, clinically proven results.
           </p>
-          <a href="../smile-gallery/" class="btn btn-teal">
+          <a href="../smile-gallery/index.html" class="btn btn-teal">
             Explore Smile Gallery <i class="bi bi-arrow-right"></i>
           </a>
         </div>

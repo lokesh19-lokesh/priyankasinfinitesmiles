@@ -435,7 +435,7 @@
           <h2 class="section-title">Related Implant Case Studies</h2>
         </div>
         <div class="col-md-4 text-md-end">
-          <a href="../smile-gallery/" class="btn btn-outline-teal btn-sm">Explore All Cases <i
+          <a href="../smile-gallery/index.html" class="btn btn-outline-teal btn-sm">Explore All Cases <i
               class="bi bi-arrow-right"></i></a>
         </div>
       </div>
@@ -443,18 +443,25 @@
       <div class="row g-4">
         <div class="col-md-6 col-lg-6">
           <div class="gallery-card">
-            <div class="gallery-image-box" onclick="window.location.href='../smile-gallery/'">
+            <div class="ba-slider-container">
               <span class="category-tag-top">Dental Implants</span>
-              <div class="gallery-split-view">
-                <div class="split-col before">
-                  <img src="../assets/images/gallery/implant-before.jpg" alt="Pre-op Missing Anterior Tooth"
-                    loading="lazy">
-                </div>
-                <div class="split-col after">
-                  <img src="../assets/images/gallery/implant-after.jpg" alt="Post-op Guided Dental Implant"
-                    loading="lazy">
+              <!-- Underneath image (Before) -->
+              <img src="../assets/images/gallery/implant-before.jpg" alt="Pre-op Missing Anterior Tooth" class="ba-before-img" loading="lazy">
+
+              <!-- Top image (After) with clip wrapper -->
+              <div class="ba-after-wrap">
+                <img src="../assets/images/gallery/implant-after.jpg" alt="Post-op Guided Dental Implant" class="ba-after-img" loading="lazy">
+              </div>
+
+              <!-- Interactive Drag Handle & Range Slider -->
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-button">
+                  <i class="bi bi-chevron-left"></i>
+                  <i class="bi bi-chevron-right"></i>
                 </div>
               </div>
+              <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
               <span class="image-label-badge badge-before">Before</span>
               <span class="image-label-badge badge-after">After</span>
             </div>
@@ -462,25 +469,32 @@
               <h4 class="gallery-card-title">Single Anterior Tooth Replacement</h4>
               <p class="gallery-card-desc">Restored missing front tooth with immediate guided titanium implant and
                 custom emergence profile Zirconia crown.</p>
-              <a href="../smile-gallery/" class="btn btn-teal btn-sm align-self-start">View in Smile Gallery</a>
+              <a href="../smile-gallery/index.html" class="btn btn-teal btn-sm align-self-start">View in Smile Gallery</a>
             </div>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-6">
           <div class="gallery-card">
-            <div class="gallery-image-box" onclick="window.location.href='../smile-gallery/'">
+            <div class="ba-slider-container">
               <span class="category-tag-top">Crowns &amp; Implants</span>
-              <div class="gallery-split-view">
-                <div class="split-col before">
-                  <img src="../assets/images/gallery/crowns-before.jpg" alt="Pre-op Worn Broken Dentition"
-                    loading="lazy">
-                </div>
-                <div class="split-col after">
-                  <img src="../assets/images/gallery/crowns-after.jpg" alt="Post-op Implant-Supported Zirconia Bridge"
-                    loading="lazy">
+              <!-- Underneath image (Before) -->
+              <img src="../assets/images/gallery/crowns-before.jpg" alt="Pre-op Worn Broken Dentition" class="ba-before-img" loading="lazy">
+
+              <!-- Top image (After) with clip wrapper -->
+              <div class="ba-after-wrap">
+                <img src="../assets/images/gallery/crowns-after.jpg" alt="Post-op Implant-Supported Zirconia Bridge" class="ba-after-img" loading="lazy">
+              </div>
+
+              <!-- Interactive Drag Handle & Range Slider -->
+              <div class="ba-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-button">
+                  <i class="bi bi-chevron-left"></i>
+                  <i class="bi bi-chevron-right"></i>
                 </div>
               </div>
+              <input type="range" min="0" max="100" value="50" class="ba-range-slider" aria-label="Before and after comparison slider">
               <span class="image-label-badge badge-before">Before</span>
               <span class="image-label-badge badge-after">After</span>
             </div>
@@ -488,7 +502,7 @@
               <h4 class="gallery-card-title">Full Arch Implant Rehabilitation</h4>
               <p class="gallery-card-desc">Restored severe occlusal bite collapse and chewing power using multi-unit
                 screw-retained Zirconia bridges.</p>
-              <a href="../smile-gallery/" class="btn btn-teal btn-sm align-self-start">View in Smile Gallery</a>
+              <a href="../smile-gallery/index.html" class="btn btn-teal btn-sm align-self-start">View in Smile Gallery</a>
             </div>
           </div>
         </div>
