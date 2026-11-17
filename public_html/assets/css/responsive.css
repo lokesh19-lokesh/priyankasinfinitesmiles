@@ -832,6 +832,28 @@
   }
 }
 
+/* BLOG RESPONSIVE ADAPTATIONS */
+@media (max-width: 991.98px) {
+  .blog-sidebar {
+    position: static;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .blog-featured-media {
+    height: 240px;
+  }
+
+  .blog-featured-body {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .blog-widget {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
 /* ==========================================================================
    6. ACCESSIBILITY & PREFERS-REDUCED-MOTION
    ========================================================================== */
